@@ -1,0 +1,28 @@
+var platformName = null;
+
+
+// Wait for device API libraries to load
+
+ document.addEventListener("deviceready", onDeviceReady, false);
+        
+
+function onDeviceReady()
+	 {      
+           getDevicePlatform();
+	 }
+
+
+function getDevicePlatform()
+{
+   var platformName = device.platform;
+  
+
+  var element = document.getElementById('deviceProperties');
+
+        element.innerHTML = 'Device Name: '     + device.model     + '<br />' + 
+                            'Device Cordova: '  + device.cordova  + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';
+
+}
